@@ -1,0 +1,39 @@
+//Teste de requisição de médico
+
+@baseUrl = http://localhost:4000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWZiZGM3MTllYjk2MDQzM2U4YTNiOWE0In0sImlhdCI6MTYwNjUzMzA1MSwiZXhwIjoxNjA2NTM2NjUxfQ.3YAQDB5eaR8RL4Dd84MC_bIcVHsUySbaz8Pn2ZrG1E4
+###
+//Obtendo os médicos
+GET {{baseUrl}}/medico/lista
+Content-Type: application/json
+x-access-token: {{token}}
+
+###
+//Buscando médico específico
+GET {{baseUrl}}/medico/5fa8660d80eedf132ccd60e4
+Content-Type: application/json
+x-access-token: {{token}}
+
+
+###
+//Inserindo um novo médico
+POST {{baseUrl}}/medico/novo
+Content-Type: application/json
+x-access-token: {{token}}
+
+{   "nome": "1Daniela Prestes",
+    "idade": 63,
+    "cidade": "Itu",
+    "uf": "SP",
+    "especialidade": "Psicólogo",
+    "stars": "2.5",
+    "avatar": "https://source.unsplash.com/featured/?medic"
+    }
+
+
+    
+###
+//Deletando um médico
+DELETE {{baseUrl}}/medico/delete/5fc1bfd40b0bac307862ea87
+Content-Type: application/json
+x-access-token: {{token}}
